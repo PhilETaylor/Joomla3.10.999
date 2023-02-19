@@ -8,4 +8,4 @@ Like it or not, Joomla 3.10.x series is now end of support, but still powers a h
 
 History
 =============
- - No changes since Joomla 3.10.11
+ - No changes since Joomla 3.10.11 - Released on Tuesday, 16 August 2022 16:00
