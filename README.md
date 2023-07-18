@@ -9,5 +9,5 @@ This follows the success of https://github.com/PhilETaylor/Joomla1.5.999 and htt
 
 History
 =============
- - Upgraded to Joomla 3.10.12 - Released on Tuesday, 11 July 2023 16:00 - just a version bump and new cacert.pem files. NOT a security release!
+ - Upgraded to Joomla 3.10.12 - Released on Tuesday, 11 July 2023 16:00 - just a version bump and new cacert.pem files. NOT a security release! Please see the [official projects FAQ](https://docs.joomla.org/Special:MyLanguage/J3.x:Joomla_3.10.12_Release_FAQ)
  - Initially Joomla 3.10.11 - Released on Tuesday, 16 August 2022 16:00
