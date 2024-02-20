@@ -153,7 +153,7 @@ class PlgUserProfile extends JPlugin
 		else
 		{
 			// Convert website URL to utf8 for display
-			$value = PunycodeHelper::urlToUTF8(htmlspecialchars($value));
+			$value = htmlspecialchars(PunycodeHelper::urlToUTF8($value), ENT_QUOTES, 'UTF-8');
 
 			if (strpos($value, 'http') === 0)
 			{
