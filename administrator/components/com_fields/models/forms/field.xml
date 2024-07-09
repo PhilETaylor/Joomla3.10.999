@@ -87,7 +87,7 @@
 			type="textarea"
 			label="COM_FIELDS_FIELD_DEFAULT_VALUE_LABEL"
 			description="COM_FIELDS_FIELD_DEFAULT_VALUE_DESC"
-			filter="raw"
+			filter="safehtml"
 		/>
 
 		<field
