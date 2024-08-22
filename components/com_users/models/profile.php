@@ -367,6 +367,9 @@ class UsersModelProfile extends JModelForm
 
 			// Reload the user record with the updated OTP configuration
 			$user->load($userId);
+
+			// Destroy active sessions after updating the OTP config
+			UserHelper::destroyUserSessions($user->id, true);
 		}
 
 		// Bind the data.

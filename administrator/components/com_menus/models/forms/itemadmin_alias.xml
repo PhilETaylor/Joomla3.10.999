@@ -39,15 +39,18 @@
 			<field
 				name="menu_image"
 				type="media"
+				schemes="http,https,ftp,ftps,data,file"
+				validate="url"
+				relative="true"
 				label="COM_MENUS_ITEM_FIELD_MENU_IMAGE_LABEL"
 				description="COM_MENUS_ITEM_FIELD_MENU_IMAGE_DESC"
 			/>
 
-			<field 
+			<field
 				name="menu_image_css"
-				type="text" 
+				type="text"
 				label="COM_MENUS_ITEM_FIELD_MENU_IMAGE_CSS_LABEL"
-				description="COM_MENUS_ITEM_FIELD_MENU_IMAGE_CSS_DESC" 
+				description="COM_MENUS_ITEM_FIELD_MENU_IMAGE_CSS_DESC"
 			/>
 
 			<field
@@ -56,7 +59,7 @@
 				label="COM_MENUS_ITEM_FIELD_MENU_TEXT_LABEL"
 				description="COM_MENUS_ITEM_FIELD_MENU_TEXT_DESC"
 				class="btn-group btn-group-yesno"
-				default="1" 
+				default="1"
 				filter="integer"
 				>
 				<option value="1">JYES</option>
