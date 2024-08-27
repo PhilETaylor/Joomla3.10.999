@@ -770,22 +770,23 @@ class Pagination
 
 		// Platform defaults
 		$defaultUrlParams = array(
-			'format' => 'WORD',
-			'option' => 'WORD',
-			'view'   => 'WORD',
-			'layout' => 'WORD',
+			'format' => 'CMD',
+			'option' => 'CMD',
+			'view'   => 'CMD',
+			'layout' => 'CMD',
 			'tpl'    => 'CMD',
 			'id'     => 'INT',
-			'Itemid' => 'INT'
+			'Itemid' => 'STRING'
 		);
 
 		// Prepare the routes
+		$url = (int) $this->app->get('legacy_pagination_behaviour', 0) ? '&' : 'index.php?';
 		$params = array();
 
 		// Use platform defaults if parameter doesn't already exist.
 		foreach ($defaultUrlParams as $param => $filter)
 		{
-			$value = $this->app->input->get($param, null, $filter);
+			$value = $this->app->input->get->get($param, null, $filter);
 
 			if ($value === null)
 			{
@@ -810,7 +811,7 @@ class Pagination
 		if (!$this->viewall)
 		{
 			$data->all->base = '0';
-			$data->all->link = \JRoute::_('index.php?' . $params . '&' . $this->prefix . 'limitstart=');
+			$data->all->link = \JRoute::_($url . $params . '&' . $this->prefix . 'limitstart=');
 		}
 
 		// Set the start and previous data objects.
@@ -823,11 +824,11 @@ class Pagination
 
 			if ($this->hideEmptyLimitstart)
 			{
-				$data->start->link = \JRoute::_('index.php?' . $params . '&' . $this->prefix . 'limitstart=');
+				$data->start->link = \JRoute::_($url . $params . '&' . $this->prefix . 'limitstart=');
 			}
 			else
 			{
-				$data->start->link = \JRoute::_('index.php?' . $params . '&' . $this->prefix . 'limitstart=0');
+				$data->start->link = \JRoute::_($url . $params . '&' . $this->prefix . 'limitstart=0');
 			}
 
 			$data->start->base    = '0';
@@ -839,7 +840,7 @@ class Pagination
 			}
 			else
 			{
-				$data->previous->link = \JRoute::_('index.php?' . $params . '&' . $this->prefix . 'limitstart=' . $page);
+				$data->previous->link = \JRoute::_($url . $params . '&' . $this->prefix . 'limitstart=' . $page);
 			}
 		}
 
@@ -853,9 +854,9 @@ class Pagination
 			$end  = ($this->pagesTotal - 1) * $this->limit;
 
 			$data->next->base = $next;
-			$data->next->link = \JRoute::_('index.php?' . $params . '&' . $this->prefix . 'limitstart=' . $next);
+			$data->next->link = \JRoute::_($url . $params . '&' . $this->prefix . 'limitstart=' . $next);
 			$data->end->base  = $end;
-			$data->end->link  = \JRoute::_('index.php?' . $params . '&' . $this->prefix . 'limitstart=' . $end);
+			$data->end->link  = \JRoute::_($url . $params . '&' . $this->prefix . 'limitstart=' . $end);
 		}
 
 		$data->pages = array();
@@ -877,7 +878,7 @@ class Pagination
 				}
 				else
 				{
-					$data->pages[$i]->link = \JRoute::_('index.php?' . $params . '&' . $this->prefix . 'limitstart=' . $offset);
+					$data->pages[$i]->link = \JRoute::_($url . $params . '&' . $this->prefix . 'limitstart=' . $offset);
 				}
 			}
 			else

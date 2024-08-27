@@ -110,6 +110,30 @@ class FinderViewSearch extends JViewLegacy
 			$app->getPathway()->addItem($this->escape($query->input));
 		}
 
+		// Add additional parameters
+		$queryParameterList = array(
+			"f" => "int",
+			"t" => "array",
+			"q" => "string",
+			"l" => "cmd",
+			"d1" => "string",
+			"d2" => "string",
+			"w1" => "string",
+			"w2" => "string",
+			"filter_order" => "word",
+			"filter_order_Dir" => "word"
+		);
+
+		foreach ($queryParameterList as $parameter => $filter) {
+			$value = $app->input->get->get($parameter, null, $filter);
+
+			if (is_null($value)) {
+				continue;
+			}
+
+			$pagination->setAdditionalUrlParam($parameter, $value);
+		}
+
 		// Push out the view data.
 		$this->state      = &$state;
 		$this->params     = &$params;

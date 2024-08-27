@@ -130,6 +130,24 @@ class SearchViewSearch extends JViewLegacy
 			// Flag indicates to not add limitstart=0 to URL
 			$pagination->hideEmptyLimitstart = true;
 
+			// Add additional parameters
+			$queryParameterList = array(
+				"searchword"   => "string",
+				"ordering"     => "word",
+				"searchphrase" => "string",
+				"areas"        => "array"
+			);
+
+			foreach ($queryParameterList as $parameter => $filter) {
+				$value = $app->input->get($parameter, null, $filter);
+
+				if (is_null($value)) {
+					continue;
+				}
+
+				$pagination->setAdditionalUrlParam($parameter, $value);
+			}
+
 			if ($state->get('match') === 'exact')
 			{
 				$searchWords = array($searchWord);

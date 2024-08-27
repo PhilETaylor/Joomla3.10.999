@@ -1218,6 +1218,20 @@
 		label="CONFIG_SYSTEM_SETTINGS_LABEL">
 
 		<field
+			name="legacy_pagination_behaviour"
+			type="radio"
+			label="COM_CONFIG_FIELD_LEGACY_PAGINATION_BEHAVIOUR_LABEL"
+			description="COM_CONFIG_FIELD_LEGACY_PAGINATION_BEHAVIOUR_DESC"
+			class="btn-group btn-group-yesno btn-group-reversed"
+			default="0"
+			filter="integer"
+		>
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+
+
+		<field
 			name="log_path"
 			type="text"
 			label="COM_CONFIG_FIELD_LOG_PATH_LABEL"
