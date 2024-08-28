@@ -786,7 +786,7 @@ class Pagination
 		// Use platform defaults if parameter doesn't already exist.
 		foreach ($defaultUrlParams as $param => $filter)
 		{
-			$value = $this->app->input->get->get($param, null, $filter);
+			$value = $this->app->input->get($param, null, $filter);
 
 			if ($value === null)
 			{
