@@ -144,7 +144,7 @@ class ContentViewArchive extends JViewLegacy
 		$this->pagination->setAdditionalUrlParam('month', $state->get('filter.month'));
 		$this->pagination->setAdditionalUrlParam('year', $state->get('filter.year'));
 		$this->pagination->setAdditionalUrlParam('filter-search', $state->get('list.filter'));
-		$this->pagination->setAdditionalUrlParam('year', $app->input->get->get('catid', [], 'array'));
+		$this->pagination->setAdditionalUrlParam('catid', $app->input->get->get('catid', array(), 'array'));
 
 		$this->_prepareDocument();
 
