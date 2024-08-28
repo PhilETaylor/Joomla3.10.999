@@ -250,6 +250,9 @@
 		<field
 			name="icon_address"
 			type="media"
+			schemes="http,https,ftp,ftps,data,file"
+			validate="url"
+			relative="true"
 			label="COM_CONTACT_FIELD_ICONS_ADDRESS_LABEL"
 			description="COM_CONTACT_FIELD_ICONS_ADDRESS_DESC"
 			hide_none="1"
@@ -258,6 +261,9 @@
 		<field
 			name="icon_email"
 			type="media"
+			schemes="http,https,ftp,ftps,data,file"
+			validate="url"
+			relative="true"
 			label="COM_CONTACT_FIELD_ICONS_EMAIL_LABEL"
 			description="COM_CONTACT_FIELD_ICONS_EMAIL_DESC"
 			hide_none="1"
@@ -266,6 +272,9 @@
 		<field
 			name="icon_telephone"
 			type="media"
+			schemes="http,https,ftp,ftps,data,file"
+			validate="url"
+			relative="true"
 			label="COM_CONTACT_FIELD_ICONS_TELEPHONE_LABEL"
 			description="COM_CONTACT_FIELD_ICONS_TELEPHONE_DESC"
 			hide_none="1"
@@ -274,6 +283,9 @@
 		<field
 			name="icon_mobile"
 			type="media"
+			schemes="http,https,ftp,ftps,data,file"
+			validate="url"
+			relative="true"
 			label="COM_CONTACT_FIELD_ICONS_MOBILE_LABEL"
 			description="COM_CONTACT_FIELD_ICONS_MOBILE_DESC"
 			hide_none="1"
@@ -282,6 +294,9 @@
 		<field
 			name="icon_fax"
 			type="media"
+			schemes="http,https,ftp,ftps,data,file"
+			validate="url"
+			relative="true"
 			label="COM_CONTACT_FIELD_ICONS_FAX_LABEL"
 			description="COM_CONTACT_FIELD_ICONS_FAX_DESC"
 			hide_none="1"
@@ -290,6 +305,9 @@
 		<field
 			name="icon_misc"
 			type="media"
+			schemes="http,https,ftp,ftps,data,file"
+			validate="url"
+			relative="true"
 			label="COM_CONTACT_FIELD_ICONS_MISC_LABEL"
 			description="COM_CONTACT_FIELD_ICONS_MISC_DESC"
 			hide_none="1"
@@ -301,6 +319,9 @@
 		<field
 			name="image"
 			type="media"
+			schemes="http,https,ftp,ftps,data,file"
+			validate="url"
+			relative="true"
 			label="COM_CONTACT_FIELD_PARAMS_IMAGE_LABEL"
 			description="COM_CONTACT_FIELD_PARAMS_IMAGE_DESC"
 			hide_none="1"

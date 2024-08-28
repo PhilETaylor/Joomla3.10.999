@@ -81,12 +81,15 @@
 		<field
 			name="login_image"
 			type="media"
+			schemes="http,https,ftp,ftps,data,file"
+			validate="url"
+			relative="true"
 			label="JFIELD_LOGIN_IMAGE_LABEL"
 			description="JFIELD_LOGIN_IMAGE_DESC"
 		/>
 
-		<field 
-			name="spacer1" 
+		<field
+			name="spacer1"
 			type="spacer"
 			hr="true"
 		/>
@@ -115,7 +118,7 @@
 			message="COM_USERS_FIELD_LOGOUT_REDIRECT_ERROR"
 			showon="logoutredirectchoice:0"
 		/>
-		
+
 		<field
 			name="logout_redirect_menuitem"
 			type="modal_menu"
@@ -157,6 +160,9 @@
 		<field
 			name="logout_image"
 			type="media"
+			schemes="http,https,ftp,ftps,data,file"
+			validate="url"
+			relative="true"
 			label="JFIELD_LOGOUT_IMAGE_LABEL"
 			description="JFIELD_LOGOUT_IMAGE_DESC"
 		/>
