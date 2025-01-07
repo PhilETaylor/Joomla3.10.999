@@ -35,6 +35,7 @@ class ContentViewArchive extends JViewLegacy
 	 */
 	public function display($tpl = null)
 	{
+		$app        = JFactory::getApplication();
 		$user       = JFactory::getUser();
 		$state      = $this->get('State');
 		$items      = $this->get('Items');
@@ -142,6 +143,8 @@ class ContentViewArchive extends JViewLegacy
 		$this->pagination = &$pagination;
 		$this->pagination->setAdditionalUrlParam('month', $state->get('filter.month'));
 		$this->pagination->setAdditionalUrlParam('year', $state->get('filter.year'));
+		$this->pagination->setAdditionalUrlParam('filter-search', $state->get('list.filter'));
+		$this->pagination->setAdditionalUrlParam('catid', $app->input->get->get('catid', array(), 'array'));
 
 		$this->_prepareDocument();
 
