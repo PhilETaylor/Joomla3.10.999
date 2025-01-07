@@ -42,80 +42,11 @@ class UsersController extends JControllerLegacy
 			switch ($vName)
 			{
 				case 'registration':
-					// If the user is already logged in, redirect to the profile page.
-					$user = JFactory::getUser();
-
-					if ($user->get('guest') != 1)
-					{
-						// Redirect to profile page.
-						$this->setRedirect(JRoute::_('index.php?option=com_users&view=profile', false));
-
-						return;
-					}
-
-					// Check if user registration is enabled
-					if (JComponentHelper::getParams('com_users')->get('allowUserRegistration') == 0)
-					{
-						// Registration is disabled - Redirect to login page.
-						$this->setRedirect(JRoute::_('index.php?option=com_users&view=login', false));
-
-						return;
-					}
-
-					// The user is a guest, load the registration model and show the registration page.
-					$model = $this->getModel('Registration');
-					break;
-
-				// Handle view specific models.
 				case 'profile':
-
-					// If the user is a guest, redirect to the login page.
-					$user = JFactory::getUser();
-
-					if ($user->get('guest') == 1)
-					{
-						// Redirect to login page.
-						$this->setRedirect(JRoute::_('index.php?option=com_users&view=login', false));
-
-						return;
-					}
-
-					$model = $this->getModel($vName);
-					break;
-
-				// Handle the default views.
 				case 'login':
-					$model = $this->getModel($vName);
-					break;
-
 				case 'reset':
-					// If the user is already logged in, redirect to the profile page.
-					$user = JFactory::getUser();
-
-					if ($user->get('guest') != 1)
-					{
-						// Redirect to profile page.
-						$this->setRedirect(JRoute::_('index.php?option=com_users&view=profile', false));
-
-						return;
-					}
-
-					$model = $this->getModel($vName);
-					break;
-
 				case 'remind':
-					// If the user is already logged in, redirect to the profile page.
-					$user = JFactory::getUser();
-
-					if ($user->get('guest') != 1)
-					{
-						// Redirect to profile page.
-						$this->setRedirect(JRoute::_('index.php?option=com_users&view=profile', false));
-
-						return;
-					}
-
-					$model = $this->getModel($vName);
+					$model = $this->getModel(ucfirst($vName));
 					break;
 
 				default:
