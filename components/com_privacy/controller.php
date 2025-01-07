@@ -30,16 +30,6 @@ class PrivacyController extends JControllerLegacy
 	{
 		$view = $this->input->get('view', $this->default_view);
 
-		// Submitting information requests and confirmation through the frontend is restricted to authenticated users at this time
-		if (in_array($view, array('confirm', 'request')) && JFactory::getUser()->guest)
-		{
-			$this->setRedirect(
-				JRoute::_('index.php?option=com_users&view=login&return=' . base64_encode('index.php?option=com_privacy&view=' . $view), false)
-			);
-
-			return $this;
-		}
-
 		// Set a Referrer-Policy header for views which require it
 		if (in_array($view, array('confirm', 'remind')))
 		{
